@@ -83,6 +83,7 @@ proxy-providers:
     type: http
     url: https://3b206e120f36-apiv2.pptiok2020.com/apiv2/rtqnuxds7py1kpwi?clash=1&extend=1
     interval: 3600 
+    path: ./speedcat.yaml
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
@@ -92,6 +93,7 @@ proxy-providers:
     type: http
     url: https://3b206e120f36-apiv2.pptiok2020.com/apiv2/rtqnuxds7py1kpwi?clash=1&extend=1
     interval: 3600 
+    path: ./tag.yaml
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
