@@ -253,10 +253,10 @@ rules:
   - PROCESS-NAME,transmission-qt.exe,DIRECT
   - PROCESS-NAME,uTorrent.exe,DIRECT
   - PROCESS-NAME,WebTorrent.exe,DIRECT
-    #RULE-SET
+  #RULE-SET
   - DOMAIN,clash.razord.top,DIRECT
   - DOMAIN,yacd.haishan.me,DIRECT
-  - DOMAIN,sub.id9.cc,DIRECT
+  #speedtest
   - 'DOMAIN-SUFFIX,cdnst.net,Speedtest'
   - 'DOMAIN-SUFFIX,cellmaps.com,Speedtest'
   - 'DOMAIN-SUFFIX,ekahau.cloud,Speedtest'
@@ -286,6 +286,7 @@ rules:
   - RULE-SET,lancidr,DIRECT
   - RULE-SET,cncidr,DIRECT
   - RULE-SET,telegramcidr,Telegram
+  - RULE-SET,gfw,PROXY
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,PROXY
