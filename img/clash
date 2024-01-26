@@ -256,6 +256,7 @@ rules:
     #RULE-SET
   - DOMAIN,clash.razord.top,DIRECT
   - DOMAIN,yacd.haishan.me,DIRECT
+  - DOMAIN,sub.id9.cc,DIRECT
   - 'DOMAIN-SUFFIX,cdnst.net,Speedtest'
   - 'DOMAIN-SUFFIX,cellmaps.com,Speedtest'
   - 'DOMAIN-SUFFIX,ekahau.cloud,Speedtest'
