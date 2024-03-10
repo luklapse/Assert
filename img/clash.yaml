@@ -23,66 +23,66 @@ proxy-groups:
   - name: PROXY
     type: select
     use: [speedcat]
-    proxies: [Auto-Url-Test,DIRECT,TAG]
+    proxies: [Auto-Url-Test,DIRECT,PKU]
 
   - name : Adblock
     type: select
     proxies: [REJECT,DIRECT,PROXY]
 
-  - name: TAG
+  - name: PKU
     type: select
-    use: [tag]
+    use: [pku]
     proxies: []
 
   - name: Youtube
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,TAG]
+    proxies: [PROXY,DIRECT,PKU]
 
   - name: Speedtest
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,TAG]
+    proxies: [PROXY,DIRECT,PKU]
 
   - name: Google
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,TAG]
+    proxies: [PROXY,DIRECT,PKU]
     
   - name: Apple
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,TAG]
+    proxies: [PROXY,DIRECT,PKU]
 
   - name: OpenAI
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,TAG]
+    proxies: [PROXY,DIRECT,PKU]
 
   - name: GameStation
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,TAG]
+    proxies: [PROXY,DIRECT,PKU]
 
   - name: GameDownload
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,TAG] 
+    proxies: [PROXY,DIRECT,PKU] 
 
   - name: Netflix
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,TAG]
+    proxies: [PROXY,DIRECT,PKU]
 
   - name: Spotify
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,TAG]
+    proxies: [PROXY,DIRECT,PKU]
 
   - name: Telegram
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,TAG]
+    proxies: [PROXY,DIRECT,PKU]
 
 #可能做地区分组
 
@@ -98,10 +98,10 @@ proxy-providers:
       url: http://cp.cloudflare.com/generate_204
       interval: 600
 
-  tag:
+  pku:
     type: http
-    url: https://3b206e120f36-apiv2.pptiok2020.com/apiv2/rtqnuxds7py1kpwi?clash=1&extend=1
-    path: ./tag.yaml
+    url: https://provider.wallesspku.space/clash/1900013022@pku.edu.cn/cs73jy82u4?group=gfw&client=cfw&version=0.20.16
+    path: ./pku.yaml
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
