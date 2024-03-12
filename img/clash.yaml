@@ -83,6 +83,10 @@ proxy-groups:
     type: select
     use: [speedcat]
     proxies: [PROXY,DIRECT,PKU]
+  - name: Pikpak
+    type: select
+    use: [speedcat]
+    proxies: [PROXY,DIRECT,PKU]
 
 #可能做地区分组
 
@@ -272,6 +276,8 @@ rules:
       - 'DOMAIN-SUFFIX,speedtestcustom.com,Speedtest'
       - 'DOMAIN-SUFFIX,webtest.net,Speedtest'
       - 'DOMAIN-KEYWORD,speedtest,Speedtest'
+      #Pikpak
+      - 'DOMAIN-SUFFIX,mypikpak.com,pikpak'
       #GameDownload
       - 'DOMAIN,assets1.xboxlive.cn,GameDownload'
       - 'DOMAIN,assets2.xboxlive.cn,GameDownload'
