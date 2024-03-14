@@ -37,56 +37,56 @@ proxy-groups:
   - name: Youtube
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,PKU]
+    proxies: [Auto-Url-Test,DIRECT,PKU]
 
   - name: Speedtest
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,PKU]
+    proxies: [Auto-Url-Test,DIRECT,PKU]
 
   - name: Google
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,PKU]
+    proxies: [Auto-Url-Test,DIRECT,PKU]
     
   - name: Apple
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,PKU]
+    proxies: [Auto-Url-Test,DIRECT,PKU]
 
   - name: OpenAI
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,PKU]
+    proxies: [Auto-Url-Test,DIRECT,PKU]
 
   - name: GameStation
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,PKU]
+    proxies: [Auto-Url-Test,DIRECT,PKU]
 
   - name: GameDownload
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,PKU] 
+    proxies: [Auto-Url-Test,DIRECT,PKU] 
 
   - name: Netflix
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,PKU]
+    proxies: [Auto-Url-Test,DIRECT,PKU]
 
   - name: Spotify
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,PKU]
+    proxies: [Auto-Url-Test,DIRECT,PKU]
 
   - name: Telegram
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,PKU]
+    proxies: [Auto-Url-Test,DIRECT,PKU]
   - name: Pikpak
     type: select
     use: [speedcat]
-    proxies: [PROXY,DIRECT,PKU]
+    proxies: [Auto-Url-Test,DIRECT,PKU]
 
 #可能做地区分组
 
