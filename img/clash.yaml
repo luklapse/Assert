@@ -277,7 +277,7 @@ rules:
       - 'DOMAIN-SUFFIX,webtest.net,Speedtest'
       - 'DOMAIN-KEYWORD,speedtest,Speedtest'
       #Pikpak
-      - 'DOMAIN-SUFFIX,mypikpak.com,pikpak'
+      - 'DOMAIN-SUFFIX,mypikpak.com,Pikpak'
       #GameDownload
       - 'DOMAIN,assets1.xboxlive.cn,GameDownload'
       - 'DOMAIN,assets2.xboxlive.cn,GameDownload'
