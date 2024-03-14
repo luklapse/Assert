@@ -12,81 +12,84 @@ external-controller: 127.0.0.1:9090
 
 
 proxy-groups:
-  - name: Auto-Url-Test
+  - name: SPEEDCAT
     type: url-test
     interval: 600
     tolerance: 150
     use: [speedcat] #引入providers
     proxies: []
     url: http://cp.cloudflare.com/generate_204
+    
+  - name: PKU
+    type: select
+    interval: 600
+    tolerance: 150
+    use: [pku]
+    proxies: []
+    url: http://cp.cloudflare.com/generate_204
 
   - name: PROXY
     type: select
-    use: [speedcat]
-    proxies: [Auto-Url-Test,DIRECT,PKU]
+    use: [speedcat,pku]
+    proxies: [SPEEDCAT,DIRECT,PKU]
 
   - name : Adblock
     type: select
-    proxies: [REJECT,DIRECT,PROXY]
-
-  - name: PKU
-    type: select
-    use: [pku]
-    proxies: []
+    proxies: [REJECT,DIRECT,SPEEDCAT,PKU]
 
   - name: Youtube
     type: select
-    use: [speedcat]
-    proxies: [Auto-Url-Test,DIRECT,PKU]
+    use: [speedcat,pku]
+    proxies: [SPEEDCAT,DIRECT,PKU]
 
   - name: Speedtest
     type: select
-    use: [speedcat]
-    proxies: [Auto-Url-Test,DIRECT,PKU]
+    use: [speedcat,pku]
+    proxies: [SPEEDCAT,DIRECT,PKU]
 
   - name: Google
     type: select
-    use: [speedcat]
-    proxies: [Auto-Url-Test,DIRECT,PKU]
+    use: [speedcat,pku]
+    proxies: [SPEEDCAT,DIRECT,PKU]
     
   - name: Apple
     type: select
-    use: [speedcat]
-    proxies: [Auto-Url-Test,DIRECT,PKU]
+    use: [speedcat,pku]
+    proxies: [SPEEDCAT,DIRECT,PKU]
 
   - name: OpenAI
     type: select
-    use: [speedcat]
-    proxies: [Auto-Url-Test,DIRECT,PKU]
+    use: [speedcat,pku]
+    proxies: [SPEEDCAT,DIRECT,PKU]
 
   - name: GameStation
     type: select
-    use: [speedcat]
-    proxies: [Auto-Url-Test,DIRECT,PKU]
+    use: [speedcat,pku]
+    proxies: [SPEEDCAT,DIRECT,PKU]
 
   - name: GameDownload
     type: select
-    use: [speedcat]
-    proxies: [Auto-Url-Test,DIRECT,PKU] 
+    use: [speedcat,pku]
+    proxies: [SPEEDCAT,DIRECT,PKU] 
 
   - name: Netflix
     type: select
-    use: [speedcat]
-    proxies: [Auto-Url-Test,DIRECT,PKU]
+    use: [speedcat,pku]
+    proxies: [SPEEDCAT,DIRECT,PKU]
 
   - name: Spotify
     type: select
-    use: [speedcat]
-    proxies: [Auto-Url-Test,DIRECT,PKU]
+    use: [speedcat,pku]
+    proxies: [SPEEDCAT,DIRECT,PKU]
 
   - name: Telegram
     type: select
-    use: [speedcat]
-    proxies: [Auto-Url-Test,DIRECT,PKU]
+    use: [speedcat,pku]
+    proxies: [SPEEDCAT,DIRECT,PKU]
   - name: Pikpak
     type: select
-    use: [speedcat]
-    proxies: [Auto-Url-Test,DIRECT,PKU]
+    use: [speedcat,pku]
+    proxies: [SPEEDCAT,DIRECT,PKU]
 
 #可能做地区分组
 
