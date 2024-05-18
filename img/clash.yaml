@@ -1024,6 +1024,7 @@ rules:
       - RULE-SET,cncidr,DIRECT
       - RULE-SET,telegramcidr,Telegram
       - RULE-SET,gfw,PROXY
+      - RULE-SET,tiktok,TikTok
       - GEOIP,LAN,DIRECT
       - GEOIP,CN,DIRECT
       - MATCH,PROXY
