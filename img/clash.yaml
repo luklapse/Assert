@@ -86,6 +86,12 @@ proxy-groups:
     type: select
     use: [speedcat,pku]
     proxies: [SPEEDCAT,DIRECT,PKU]
+
+  - name: TikTok
+    type: select
+    use: [speedcat,pku]
+    proxies: [SPEEDCAT,DIRECT,PKU]
+    
   - name: Pikpak
     type: select
     use: [speedcat,pku]
