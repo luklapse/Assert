@@ -52,25 +52,25 @@ proxy-groups:
     use: [speedcat,pku]
     proxies: [SPEEDCAT,DIRECT,PKU]
     
-  - name: Apple
-    type: select
-    use: [speedcat,pku]
-    proxies: [SPEEDCAT,DIRECT,PKU]
-
   - name: OpenAI
     type: select
     use: [speedcat,pku]
     proxies: [SPEEDCAT,DIRECT,PKU]
 
-  - name: GameStation
+  - name: Steam
     type: select
     use: [speedcat,pku]
     proxies: [SPEEDCAT,DIRECT,PKU]
 
-  - name: GameDownload
+  - name: Microsoft
     type: select
     use: [speedcat,pku]
     proxies: [SPEEDCAT,DIRECT,PKU] 
+  
+  - name: Apple
+    type: select
+    use: [speedcat,pku]
+    proxies: [SPEEDCAT,DIRECT,PKU]
 
   - name: Netflix
     type: select
