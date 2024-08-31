@@ -103,7 +103,7 @@ proxy-providers:
 # 从链接导入的配置文件（支持多个Clash 订阅链接）
   speedcat:
     type: http
-    url: https://3b206e120f36-apiv2.pptiok2020.com/apiv2/rtqnuxds7py1kpwi?clash=1&extend=1
+    url: https://scdy03.scsub.com/apiv2/rtqnuxds7py1kpwi?clash=1&extend=1
     interval: 3600 
     path: ./speedcat.yaml
     health-check:
