@@ -12,7 +12,7 @@ external-controller: 127.0.0.1:9090
 
 
 proxy-groups:
-  - name: SPEEDCAT
+  - name:  Money
     type: url-test
     interval: 600
     tolerance: 150
@@ -31,71 +31,71 @@ proxy-groups:
   - name: PROXY
     type: select
     use: [speedcat,pku]
-    proxies: [SPEEDCAT,DIRECT,PKU]
+    proxies: [ Money,DIRECT,PKU]
 
   - name : Adblock
     type: select
-    proxies: [REJECT,DIRECT,SPEEDCAT,PKU]
+    proxies: [REJECT,DIRECT, Money,PKU]
 
   - name: Youtube
     type: select
     use: [speedcat,pku]
-    proxies: [SPEEDCAT,DIRECT,PKU]
+    proxies: [ Money,DIRECT,PKU]
 
   - name: Speedtest
     type: select
     use: [speedcat,pku]
-    proxies: [SPEEDCAT,DIRECT,PKU]
+    proxies: [ Money,DIRECT,PKU]
 
   - name: Google
     type: select
     use: [speedcat,pku]
-    proxies: [SPEEDCAT,DIRECT,PKU]
+    proxies: [ Money,DIRECT,PKU]
     
   - name: OpenAI
     type: select
     use: [speedcat,pku]
-    proxies: [SPEEDCAT,DIRECT,PKU]
+    proxies: [ Money,DIRECT,PKU]
 
   - name: Steam
     type: select
     use: [speedcat,pku]
-    proxies: [SPEEDCAT,DIRECT,PKU]
+    proxies: [ Money,DIRECT,PKU]
 
   - name: Microsoft
     type: select
     use: [speedcat,pku]
-    proxies: [SPEEDCAT,DIRECT,PKU] 
+    proxies: [ Money,DIRECT,PKU] 
   
   - name: Apple
     type: select
     use: [speedcat,pku]
-    proxies: [SPEEDCAT,DIRECT,PKU]
+    proxies: [ Money,DIRECT,PKU]
 
   - name: Netflix
     type: select
     use: [speedcat,pku]
-    proxies: [SPEEDCAT,DIRECT,PKU]
+    proxies: [ Money,DIRECT,PKU]
 
   - name: Spotify
     type: select
     use: [speedcat,pku]
-    proxies: [SPEEDCAT,DIRECT,PKU]
+    proxies: [ Money,DIRECT,PKU]
 
   - name: Telegram
     type: select
     use: [speedcat,pku]
-    proxies: [SPEEDCAT,DIRECT,PKU]
+    proxies: [ Money,DIRECT,PKU]
 
   - name: TikTok
     type: select
     use: [speedcat,pku]
-    proxies: [SPEEDCAT,DIRECT,PKU]
+    proxies: [ Money,DIRECT,PKU]
     
   - name: Pikpak
     type: select
     use: [speedcat,pku]
-    proxies: [SPEEDCAT,DIRECT,PKU]
+    proxies: [ Money,DIRECT,PKU]
 
 #可能做地区分组
 
@@ -106,6 +106,16 @@ proxy-providers:
     url: https://scdy03.scsub.com/apiv2/rtqnuxds7py1kpwi?clash=1&extend=1
     interval: 3600 
     path: ./speedcat.yaml
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 600
+
+  taishan:
+    type: http
+    url: https://910.tsss123.cc/api/v1/client/subscribe?token=1d5ab96739d43a1c97800f50c823ac8a
+    interval: 3600
+    path: ./taishan.yaml
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
