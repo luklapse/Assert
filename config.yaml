@@ -6,19 +6,38 @@ allow-lan: true
 mode: Rule
 log-level: silent
 external-controller: 127.0.0.1:9090
+proxy-providers:
+   money_provider:
+    type: http
+    path: "./proxy_provider/ money_provider.yaml"
+    url: https://hutaod.com/link/Ec978EMYGUWdaDxz?clash=1
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 600
+  pku_provider:
+    type: http
+    path: "./proxy_provider/pku_provider.yaml"
+    url: https://provider.wallesspku.space/clash/1900013022@pku.edu.cn/cs73jy82u4?group=gfw&client=cfw&version=0.20.16
+    interval:
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 600
 proxy-groups:
-- name: Subscribe
+- name:  money_groups
   type: url-test
   disable-udp: false
   use:
-  - subscribe
+  -  money_provider
   url: http://cp.cloudflare.com/generate_204
   interval: '600'
   tolerance: '150'
-- name: PKU
+- name: pku_groups
   type: url-test
   use:
-  - pku
+  - pku_provider
   url: http://cp.cloudflare.com/generate_204
   interval: '600'
   tolerance: '150'
@@ -26,146 +45,127 @@ proxy-groups:
   type: select
   disable-udp: false
   proxies:
-  - Subscribe
-  - PKU
+  -  money_groups
+  - pku_groups
   - DIRECT
   use:
-  - subscribe
-  - pku
+  -  money_provider
+  - pku_provider
 - name: Adblock
   type: select
   proxies:
   - REJECT
   - DIRECT
-  - Subscribe
-  - PKU
+  -  money_groups
+  - pku_groups
 - name: Youtube
   type: select
   proxies:
-  - Subscribe
-  - PKU
+  -  money_groups
+  - pku_groups
   - DIRECT
   use:
-  - subscribe
-  - pku
+  -  money_provider
+  - pku_provider
 - name: Speedtest
   type: select
   proxies:
-  - PKU
+  - pku_groups
   - DIRECT
-  - Subscribe
+  -  money_groups
   use:
-  - subscribe
-  - pku
+  -  money_provider
+  - pku_provider
 - name: Google
   type: select
   proxies:
-  - Subscribe
-  - PKU
+  -  money_groups
+  - pku_groups
   - DIRECT
   use:
-  - subscribe
-  - pku
+  -  money_provider
+  - pku_provider
 - name: AI
   type: select
   proxies:
-  - Subscribe
-  - PKU
+  -  money_groups
+  - pku_groups
   - DIRECT
   use:
-  - subscribe
-  - pku
+  -  money_provider
+  - pku_provider
 - name: Steam
   type: select
   proxies:
-  - Subscribe
-  - PKU
+  -  money_groups
+  - pku_groups
   - DIRECT
   use:
-  - subscribe
-  - pku
+  -  money_provider
+  - pku_provider
 - name: Apple
   type: select
   proxies:
-  - Subscribe
-  - PKU
+  -  money_groups
+  - pku_groups
   - DIRECT
   use:
-  - subscribe
-  - pku
+  -  money_provider
+  - pku_provider
 - name: Netflix
   type: select
   proxies:
-  - Subscribe
-  - PKU
+  -  money_groups
+  - pku_groups
   - DIRECT
   use:
-  - subscribe
-  - pku
+  -  money_provider
+  - pku_provider
 - name: Spotify
   type: select
   proxies:
   - DIRECT
-  - Subscribe
-  - PKU
+  -  money_groups
+  - pku_groups
   use:
-  - subscribe
-  - pku
+  -  money_provider
+  - pku_provider
 - name: Telegram
   type: select
   proxies:
-  - Subscribe
-  - PKU
+  -  money_groups
+  - pku_groups
   - DIRECT
   use:
-  - subscribe
-  - pku
+  -  money_provider
+  - pku_provider
 - name: TikTok
   type: select
   proxies:
-  - Subscribe
-  - PKU
+  -  money_groups
+  - pku_groups
   - DIRECT
   use:
-  - subscribe
-  - pku
+  -  money_provider
+  - pku_provider
 - name: Pikpak
   type: select
   proxies:
-  - Subscribe
-  - PKU
+  -  money_groups
+  - pku_groups
   - DIRECT
   use:
-  - subscribe
-  - pku
+  -  money_provider
+  - pku_provider
 - name: Microsoft
   type: select
   proxies:
-  - Subscribe
-  - PKU
+  -  money_groups
+  - pku_groups
   - DIRECT
   use:
-  - subscribe
-  - pku
-proxy-providers:
-  subscribe:
-    type: http
-    path: "./proxy_provider/subscribe.yaml"
-    url: https://hutaod.com/link/Ec978EMYGUWdaDxz?clash=1
-    interval: 3600
-    health-check:
-      enable: true
-      url: http://cp.cloudflare.com/generate_204
-      interval: 600
-  pku:
-    type: http
-    path: "./proxy_provider/pku.yaml"
-    url: https://provider.wallesspku.space/clash/1900013022@pku.edu.cn/cs73jy82u4?group=gfw&client=cfw&version=0.20.16
-    interval:
-    health-check:
-      enable: true
-      url: http://cp.cloudflare.com/generate_204
-      interval: 600
+  -  money_provider
+  - pku_provider
 rule-providers:
   reject:
     type: http
