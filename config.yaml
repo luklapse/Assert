@@ -7,11 +7,11 @@ mode: Rule
 log-level: silent
 external-controller: 127.0.0.1:9090
 proxy-groups:
-- name: TaiShan
+- name: Subscribe
   type: url-test
   disable-udp: false
   use:
-  - taishan
+  - subscribe
   url: http://cp.cloudflare.com/generate_204
   interval: '600'
   tolerance: '150'
@@ -26,132 +26,132 @@ proxy-groups:
   type: select
   disable-udp: false
   proxies:
-  - TaiShan
+  - Subscribe
   - PKU
   - DIRECT
   use:
-  - taishan
+  - subscribe
   - pku
 - name: Adblock
   type: select
   proxies:
   - REJECT
   - DIRECT
-  - TaiShan
+  - Subscribe
   - PKU
 - name: Youtube
   type: select
   proxies:
-  - TaiShan
+  - Subscribe
   - PKU
   - DIRECT
   use:
-  - taishan
+  - subscribe
   - pku
 - name: Speedtest
   type: select
   proxies:
   - PKU
   - DIRECT
-  - TaiShan
+  - Subscribe
   use:
-  - taishan
+  - subscribe
   - pku
 - name: Google
   type: select
   proxies:
-  - TaiShan
+  - Subscribe
   - PKU
   - DIRECT
   use:
-  - taishan
+  - subscribe
   - pku
 - name: AI
   type: select
   proxies:
-  - TaiShan
+  - Subscribe
   - PKU
   - DIRECT
   use:
-  - taishan
+  - subscribe
   - pku
 - name: Steam
   type: select
   proxies:
-  - TaiShan
+  - Subscribe
   - PKU
   - DIRECT
   use:
-  - taishan
+  - subscribe
   - pku
 - name: Apple
   type: select
   proxies:
-  - TaiShan
+  - Subscribe
   - PKU
   - DIRECT
   use:
-  - taishan
+  - subscribe
   - pku
 - name: Netflix
   type: select
   proxies:
-  - TaiShan
+  - Subscribe
   - PKU
   - DIRECT
   use:
-  - taishan
+  - subscribe
   - pku
 - name: Spotify
   type: select
   proxies:
   - DIRECT
-  - TaiShan
+  - Subscribe
   - PKU
   use:
-  - taishan
+  - subscribe
   - pku
 - name: Telegram
   type: select
   proxies:
-  - TaiShan
+  - Subscribe
   - PKU
   - DIRECT
   use:
-  - taishan
+  - subscribe
   - pku
 - name: TikTok
   type: select
   proxies:
-  - TaiShan
+  - Subscribe
   - PKU
   - DIRECT
   use:
-  - taishan
+  - subscribe
   - pku
 - name: Pikpak
   type: select
   proxies:
-  - TaiShan
+  - Subscribe
   - PKU
   - DIRECT
   use:
-  - taishan
+  - subscribe
   - pku
 - name: Microsoft
   type: select
   proxies:
-  - TaiShan
+  - Subscribe
   - PKU
   - DIRECT
   use:
-  - taishan
+  - subscribe
   - pku
 proxy-providers:
-  taishan:
+  subscribe:
     type: http
-    path: "./proxy_provider/taishan.yaml"
-    url: https://910.tsss123.cc/api/v1/client/subscribe?token=1d5ab96739d43a1c97800f50c823ac8a
+    path: "./proxy_provider/subscribe.yaml"
+    url: https://hutaod.com/link/Ec978EMYGUWdaDxz?clash=1
     interval: 3600
     health-check:
       enable: true
