@@ -1,0 +1,350 @@
+---
+port: 8080
+sock5-port: 8081
+mixed-port: 7890
+allow-lan: true
+mode: Rule
+log-level: silent
+external-controller: 127.0.0.1:9090
+proxy-groups:
+- name: TaiShan
+  type: url-test
+  disable-udp: false
+  use:
+  - taishan
+  url: http://cp.cloudflare.com/generate_204
+  interval: '600'
+  tolerance: '150'
+- name: PKU
+  type: url-test
+  use:
+  - pku
+  url: http://cp.cloudflare.com/generate_204
+  interval: '600'
+  tolerance: '150'
+- name: PROXY
+  type: select
+  disable-udp: false
+  proxies:
+  - TaiShan
+  - PKU
+  - DIRECT
+  use:
+  - taishan
+  - pku
+- name: Adblock
+  type: select
+  proxies:
+  - REJECT
+  - DIRECT
+  - TaiShan
+  - PKU
+- name: Youtube
+  type: select
+  proxies:
+  - TaiShan
+  - PKU
+  - DIRECT
+  use:
+  - taishan
+  - pku
+- name: Speedtest
+  type: select
+  proxies:
+  - PKU
+  - DIRECT
+  - TaiShan
+  use:
+  - taishan
+  - pku
+- name: Google
+  type: select
+  proxies:
+  - TaiShan
+  - PKU
+  - DIRECT
+  use:
+  - taishan
+  - pku
+- name: AI
+  type: select
+  proxies:
+  - TaiShan
+  - PKU
+  - DIRECT
+  use:
+  - taishan
+  - pku
+- name: Steam
+  type: select
+  proxies:
+  - TaiShan
+  - PKU
+  - DIRECT
+  use:
+  - taishan
+  - pku
+- name: Apple
+  type: select
+  proxies:
+  - TaiShan
+  - PKU
+  - DIRECT
+  use:
+  - taishan
+  - pku
+- name: Netflix
+  type: select
+  proxies:
+  - TaiShan
+  - PKU
+  - DIRECT
+  use:
+  - taishan
+  - pku
+- name: Spotify
+  type: select
+  proxies:
+  - DIRECT
+  - TaiShan
+  - PKU
+  use:
+  - taishan
+  - pku
+- name: Telegram
+  type: select
+  proxies:
+  - TaiShan
+  - PKU
+  - DIRECT
+  use:
+  - taishan
+  - pku
+- name: TikTok
+  type: select
+  proxies:
+  - TaiShan
+  - PKU
+  - DIRECT
+  use:
+  - taishan
+  - pku
+- name: Pikpak
+  type: select
+  proxies:
+  - TaiShan
+  - PKU
+  - DIRECT
+  use:
+  - taishan
+  - pku
+- name: Microsoft
+  type: select
+  proxies:
+  - TaiShan
+  - PKU
+  - DIRECT
+  use:
+  - taishan
+  - pku
+proxy-providers:
+  taishan:
+    type: http
+    path: "./proxy_provider/taishan.yaml"
+    url: https://910.tsss123.cc/api/v1/client/subscribe?token=1d5ab96739d43a1c97800f50c823ac8a
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 600
+  pku:
+    type: http
+    path: "./proxy_provider/pku.yaml"
+    url: https://provider.wallesspku.space/clash/1900013022@pku.edu.cn/cs73jy82u4?group=gfw&client=cfw&version=0.20.16
+    interval:
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 600
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
+    path: "./profiles/rules/reject.yaml"
+    interval: 86400
+  apple:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt
+    path: "./profiles/rules/apple.yaml"
+    interval: 86400
+  google:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt
+    path: "./profiles/rules/google.yaml"
+    interval: 86400
+  proxy:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt
+    path: "./profiles/rules/proxy.yaml"
+    interval: 86400
+  direct:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt
+    path: "./profiles/rules/direct.yaml"
+    interval: 86400
+  private:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt
+    path: "./profiles/rules/private.yaml"
+    interval: 86400
+  gfw:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt
+    path: "./profiles/rules/gfw.yaml"
+    interval: 86400
+  greatfire:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/greatfire.txt
+    path: "./profiles/rules/greatfire.yaml"
+    interval: 86400
+  tld-not-cn:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt
+    path: "./profiles/rules/tld-not-cn.yaml"
+    interval: 86400
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt
+    path: "./profiles/rules/telegramcidr.yaml"
+    interval: 86400
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt
+    path: "./profiles/rules/cncidr.yaml"
+    interval: 86400
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt
+    path: "./profiles/rules/lancidr.yaml"
+    interval: 86400
+  spotify:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR/Clash/Providers/Ruleset/Spotify.yaml
+    interval: 86400
+    path: "./profiles/rules/spotify.yaml"
+  youtube:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR/Clash/Providers/Ruleset/YouTube.yaml
+    path: "./profiles/rules/youtube.yaml"
+    interval: 86400
+  netflix:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR/Clash/Providers/Ruleset/Netflix.yaml
+    path: "./profiles/rules/netflixip.yaml"
+    interval: 86400
+  ai:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR/Clash/Providers/Ruleset/AI.yaml
+    path: "./profiles/rulse/ai.yaml"
+    interval: 86400
+  tiktok:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR/Clash/Providers/Ruleset/TikTok.yaml
+    path: "./profiles/rulse/tiktok.yaml"
+    interval: 86400
+  microsoft:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR/Clash/Providers/Ruleset/Microsoft.yaml
+    path: "./profiles/rules/microsoft.yaml"
+    interval: 86400
+  steam:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR/Clash/Providers/Ruleset/Steam.yaml
+    path: "./profile/rules/steam.yaml"
+    interval: 86400
+rules:
+- PROCESS-NAME,v2ray,DIRECT
+- PROCESS-NAME,xray,DIRECT
+- PROCESS-NAME,naive,DIRECT
+- PROCESS-NAME,trojan,DIRECT
+- PROCESS-NAME,trojan-go,DIRECT
+- PROCESS-NAME,ss-local,DIRECT
+- PROCESS-NAME,privoxy,DIRECT
+- PROCESS-NAME,leaf,DIRECT
+- PROCESS-NAME,v2ray.exe,DIRECT
+- PROCESS-NAME,xray.exe,DIRECT
+- PROCESS-NAME,naive.exe,DIRECT
+- PROCESS-NAME,trojan.exe,DIRECT
+- PROCESS-NAME,trojan-go.exe,DIRECT
+- PROCESS-NAME,ss-local.exe,DIRECT
+- PROCESS-NAME,privoxy.exe,DIRECT
+- PROCESS-NAME,leaf.exe,DIRECT
+- PROCESS-NAME,Surge,DIRECT
+- PROCESS-NAME,Surge 2,DIRECT
+- PROCESS-NAME,Surge 3,DIRECT
+- PROCESS-NAME,Surge 4,DIRECT
+- PROCESS-NAME,Surge%202,DIRECT
+- PROCESS-NAME,Surge%203,DIRECT
+- PROCESS-NAME,Surge%204,DIRECT
+- PROCESS-NAME,Thunder,DIRECT
+- PROCESS-NAME,DownloadService,DIRECT
+- PROCESS-NAME,qBittorrent,DIRECT
+- PROCESS-NAME,Transmission,DIRECT
+- PROCESS-NAME,fdm,DIRECT
+- PROCESS-NAME,aria2c,DIRECT
+- PROCESS-NAME,Folx,DIRECT
+- PROCESS-NAME,NetTransport,DIRECT
+- PROCESS-NAME,uTorrent,DIRECT
+- PROCESS-NAME,WebTorrent,DIRECT
+- PROCESS-NAME,aria2c.exe,DIRECT
+- PROCESS-NAME,BitComet.exe,DIRECT
+- PROCESS-NAME,fdm.exe,DIRECT
+- PROCESS-NAME,NetTransport.exe,DIRECT
+- PROCESS-NAME,qbittorrent.exe,DIRECT
+- PROCESS-NAME,Thunder.exe,DIRECT
+- PROCESS-NAME,ThunderVIP.exe,DIRECT
+- PROCESS-NAME,transmission-daemon.exe,DIRECT
+- PROCESS-NAME,transmission-qt.exe,DIRECT
+- PROCESS-NAME,uTorrent.exe,DIRECT
+- PROCESS-NAME,WebTorrent.exe,DIRECT
+- DOMAIN-SUFFIX,mypikpak.com,Pikpak
+- DOMAIN,clash.razord.top,DIRECT
+- DOMAIN,yacd.haishan.me,DIRECT
+- RULE-SET,steam,Steam
+- RULE-SET,microsoft,Microsoft
+- RULE-SET,spotify,Spotify
+- RULE-SET,ai,AI
+- RULE-SET,netflix,Netflix
+- RULE-SET,private,DIRECT
+- RULE-SET,reject,Adblock
+- RULE-SET,apple,Apple
+- RULE-SET,google,Google
+- RULE-SET,proxy,PROXY
+- RULE-SET,direct,DIRECT
+- RULE-SET,lancidr,DIRECT
+- RULE-SET,cncidr,DIRECT
+- RULE-SET,telegramcidr,Telegram
+- RULE-SET,gfw,PROXY
+- RULE-SET,tiktok,TikTok
+- GEOIP,LAN,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,PROXY
