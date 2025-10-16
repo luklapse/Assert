@@ -10,7 +10,7 @@ proxy-providers:
   money_provider:
     type: http
     path: "./proxy_provider/ money_provider.yaml"
-    url: https://suo.yt/DWqjhH5
+    url: https://hutaod.com/link/IYtvL1DYpMGZHH3E?clash=1
     interval: 3600
     health-check:
       enable: true
