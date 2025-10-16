@@ -10,7 +10,7 @@ proxy-providers:
   money_provider:
     type: http
     path: "./proxy_provider/ money_provider.yaml"
-    url: https://hutaod.com/link/IYtvL1DYpMGZHH3E?clash=1
+    url: https://hutaod.com/link/4MKtB4CdquftwjuF?clash=1
     interval: 3600
     health-check:
       enable: true
@@ -33,7 +33,7 @@ proxy-groups:
       - money_groups
       - pku_groups
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
+      - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇸🇬 新加坡节点
       - 🇺🇲 美国节点
@@ -65,7 +65,7 @@ proxy-groups:
       - money_groups
       - pku_groups
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
+      - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇸🇬 新加坡节点
       - 🇺🇲 美国节点
@@ -76,7 +76,7 @@ proxy-groups:
       - money_groups
       - pku_groups
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
+      - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇸🇬 新加坡节点
       - 🇺🇲 美国节点
@@ -89,7 +89,7 @@ proxy-groups:
       - money_groups
       - pku_groups
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
+      - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇸🇬 新加坡节点
       - 🇺🇲 美国节点
@@ -101,7 +101,7 @@ proxy-groups:
       - money_groups
       - pku_groups
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
+      - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇸🇬 新加坡节点
       - 🇺🇲 美国节点
@@ -113,7 +113,7 @@ proxy-groups:
       - money_groups
       - pku_groups
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
+      - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇸🇬 新加坡节点
       - 🇺🇲 美国节点
@@ -125,7 +125,7 @@ proxy-groups:
       - money_groups
       - pku_groups
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
+      - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇸🇬 新加坡节点
       - 🇺🇲 美国节点
@@ -138,7 +138,7 @@ proxy-groups:
       - money_groups
       - pku_groups
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
+      - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇸🇬 新加坡节点
       - 🇺🇲 美国节点
@@ -151,7 +151,7 @@ proxy-groups:
       - money_groups
       - pku_groups
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
+      - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇸🇬 新加坡节点
       - 🇺🇲 美国节点
@@ -163,7 +163,7 @@ proxy-groups:
       - money_groups
       - pku_groups
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
+      - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇸🇬 新加坡节点
       - 🇺🇲 美国节点
@@ -174,12 +174,12 @@ proxy-groups:
     tolerance: 20
     interval: 300
     filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"
-  - name: 🇨🇳 台湾节点
+  - name: 🇹🇼 台湾节点
     type: url-test
     include-all: true
     tolerance: 20
     interval: 300
-    filter: "(?=.*(台|TW|(?i)TW))^((?!(台|日|韩|新|深|美)).)*$"
+    filter: "(?=.*(台|TW|(?i)TW))^((?!(港|日|韩|新|深|美)).)*$"
   - name: 🇯🇵 日本节点
     type: url-test
     include-all: true
@@ -205,7 +205,7 @@ proxy-groups:
       - money_groups
       - pku_groups
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
+      - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇸🇬 新加坡节点
       - 🇺🇲 美国节点
@@ -217,7 +217,7 @@ proxy-groups:
       - money_groups
       - pku_groups
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
+      - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇸🇬 新加坡节点
       - 🇺🇲 美国节点
@@ -229,7 +229,7 @@ proxy-groups:
       - money_groups
       - pku_groups
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
+      - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇸🇬 新加坡节点
       - 🇺🇲 美国节点
@@ -241,7 +241,7 @@ proxy-groups:
       - money_groups
       - pku_groups
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
+      - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇸🇬 新加坡节点
       - 🇺🇲 美国节点
