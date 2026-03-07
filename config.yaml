@@ -10,7 +10,7 @@ proxy-providers:
   money_provider:
     type: http
     path: "./proxy_provider/ money_provider.yaml"
-    url: https://hutaod.com/link/fuhP403tvsFTjNLI?clash=1
+    url: https://999.sub987.top/weibo/ipx/client/dy?token=1d5ab96739d43a1c97800f50c823ac8a
     interval: 3600
     health-check:
       enable: true
